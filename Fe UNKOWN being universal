@@ -1,0 +1,168 @@
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "Script Executed! ";
+	Text = "Subcribe To DonesTrasNam! 
+Duration = 5;
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = true
+ 
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0.8, 0, 0.3, 0) --Position
+Toggle.Size = UDim2.new(0, 90, 0, 60) --Size
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "BARRAGE" --Name of Button
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 28.000
+Toggle.Draggable = false
+Toggle.MouseButton1Click:connect(function()
+for i = 1, 10 do
+  local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator")
+animator.Parent = humanoid
+
+-- Load the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://126753849"
+
+-- Create an animation track
+local animationTrack = animator:LoadAnimation(animation)
+
+-- Set the speed to 1.5 and play the animation
+animationTrack:Play()
+animationTrack:AdjustSpeed(6)
+
+-- Optional: Stop the animation after it finishes
+animationTrack.Stopped:Connect(function()
+    animationTrack:Stop()
+end)
+    wait(0.3) -- Adjust this time as needed
+end
+end)
+ 
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator")
+animator.Parent = humanoid
+
+-- Load the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://129423131"
+
+-- Create an animation track
+local animationTrack = animator:LoadAnimation(animation)
+
+-- Set the speed to 1.5 and play the animation
+animationTrack:Play()
+animationTrack:AdjustSpeed(0.7)
+
+-- Optional: Stop the animation after it finishes
+animationTrack.Stopped:Connect(function()
+    animationTrack:Stop()
+end)
+
+local player = game.Players.LocalPlayer
+	local character = player.Character or player.CharacterAdded:Wait()
+	local animate = character:WaitForChild("Animate")
+
+	animate.idle.Animation1.AnimationId = "http://www.roblox.com/asset/?id=160737408"
+	game.Players.LocalPlayer.Character.Animate.walk.WalkAnim.AnimationId = "http://www.roblox.com/asset/?id=204328711"
+game.Players.LocalPlayer.Character.Animate.jump.JumpAnim.AnimationId = "http://www.roblox.com/asset/?id=90872539"
+game.Players.LocalPlayer.Character.Animate.fall.FallAnim.AnimationId = "http://www.roblox.com/asset/?id=90872539"
+
+local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator")
+animator.Parent = humanoid
+
+-- Load the animation
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://121572214"
+
+-- Create an animation track
+local animationTrack = animator:LoadAnimation(animation)
+
+-- Set the speed to 1.5 and play the animation
+animationTrack:Play()
+animationTrack:AdjustSpeed(1)
+
+-- Optional: Stop the animation after it finishes
+animationTrack.Stopped:Connect(function()
+    animationTrack:Stop()
+end)
+
+local ScreenGui = Instance.new("ScreenGui")
+ScreenGui.Name = "ScreenGui"
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+ScreenGui.ResetOnSpawn = true
+
+local Toggle = Instance.new("TextButton")
+Toggle.Name = "Toggle"
+Toggle.Parent = ScreenGui
+Toggle.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Toggle.Position = UDim2.new(0.7, 0, 0.3, 0) -- Position
+Toggle.Size = UDim2.new(0, 90, 0, 60) -- Size
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "SCREAM" -- Name of Button
+Toggle.TextColor3 = Color3.fromRGB(248, 248, 248)
+Toggle.TextSize = 28.000
+Toggle.Draggable = false
+
+Toggle.MouseButton1Click:connect(function()
+    local args = {
+        [1] = "AHHHHHHHHHHHHHHHHHHH",
+        [2] = "All"
+    }
+
+    game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+    wait(0.4)
+
+    local player = game.Players.LocalPlayer
+    local character = player.Character or player.CharacterAdded:Wait()
+    local humanoid = character:WaitForChild("Humanoid")
+
+    local animator = humanoid:FindFirstChildOfClass("Animator") or Instance.new("Animator")
+    animator.Parent = humanoid
+
+    -- Load the animations
+    local animation1 = Instance.new("Animation")
+    animation1.AnimationId = "rbxassetid://87986341"
+
+    local animation2 = Instance.new("Animation")
+    animation2.AnimationId = "rbxassetid://180611870"
+
+    -- Create animation tracks
+    local animationTrack1 = animator:LoadAnimation(animation1)
+    local animationTrack2 = animator:LoadAnimation(animation2)
+
+    -- Play both animations and adjust speed to 400
+    animationTrack1:Play()
+    animationTrack1:AdjustSpeed(400)
+
+    animationTrack2:Play()
+    animationTrack2:AdjustSpeed(400)
+
+    -- Stop both animations after 4 seconds
+    wait(4)
+    animationTrack1:Stop()
+    animationTrack2:Stop()
+end)
+
+local Corner = Instance.new("UICorner")
+Corner.Name = "Corner"
+Corner.Parent = Toggle
