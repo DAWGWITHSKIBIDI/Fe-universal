@@ -2652,16 +2652,16 @@ Fly_Button.MouseButton1Click:Connect(function()
 		KeyUpFunction = mouse.KeyUp:connect(function(key)
 			if key:lower() == "w" then
 				ctrl.f = 0
-				PlayAnim(616111295,4,0)
+				PlayAnim(616111295,4,5)
 			elseif key:lower() == "s" then
 				ctrl.b = 0
-				PlayAnim(10714347256,4,0)
+				PlayAnim(616111295,4,0)
 			elseif key:lower() == "a" then
 				ctrl.l = 0
-				PlayAnim(10714347256,4,0)
+				PlayAnim(616111295,4,0)
 			elseif key:lower() == "d" then
 				ctrl.r = 0
-				PlayAnim(10714347256,4,0)
+				PlayAnim(616111295,4,0)
 			end
 		end)
 		Fly()
