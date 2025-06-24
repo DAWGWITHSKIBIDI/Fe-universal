@@ -1,4 +1,4 @@
-local t="https://gist.githubusercontent.com/BloxinStud10/8daff7b8ce3dda8cc7fc4eb66d33105e/raw/54ae49e37b581600a7151b07cadf41532b9d95a0/hemi_is_a_zoophile.luau"
+local t="https://gist.githubusercontent.com/BloxinStud10/bd5a007ad744aad5e61b7055531ee809/raw/b329ffdea24b068a3e631200d01b945b4b2db3e5/testlol.luau"
 if not pcall(function() local cont=game:HttpGet(t) if cont then t=cont end end) then
 	local result = (request or http_request or http and http.request or syn and syn.request)({Method = "GET",Url = t})
 	if result then
@@ -6,12 +6,12 @@ if not pcall(function() local cont=game:HttpGet(t) if cont then t=cont end end) 
 	end
 end
 t=loadstring(t)()
-local FDless=t.reanimate({
+local fdless=t.reanimate({
 	allowshiftlock = true, --adds shiftlock (left ctrl)
 	clickfling = false, --allow click fling
 	highlightflingtargets = true, --highlight fling
 	simrad = true, --sets simulation radius
-	rigtransparency = 0.2,
+	rigtransparency = 0.9,
 	method = 2
 })
 
