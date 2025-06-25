@@ -20,7 +20,7 @@ local fdless=t.reanimate({
 	clickfling = false, --allow click fling
 	highlightflingtargets = true, --highlight fling
 	simrad = true, --sets simulation radius
-	rigtransparency = 0.2,
+	rigtransparency = 0.9,
 	method = 2
 })
 
@@ -388,6 +388,7 @@ local Players = game:GetService("Players")
 
 	ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
 	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ScreenGui.ResetOnSpawn = false
 
 	W.Name = "W"
 	W.Parent = ScreenGui
