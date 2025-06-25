@@ -20,7 +20,7 @@ local fdless=t.reanimate({
 	clickfling = false, --allow click fling
 	highlightflingtargets = true, --highlight fling
 	simrad = true, --sets simulation radius
-	rigtransparency = 0.9,
+	rigtransparency = 0.2,
 	method = 2
 })
 
@@ -372,6 +372,65 @@ local Players = game:GetService("Players")
     Character:FindFirstChildOfClass("Humanoid").JumpPower = 1
     for _, Part in next, VirtualBody:GetChildren() do
         if Part:IsA("BasePart") or Part:IsA("Decal") then
+            Part.Transparency = 1
+        end
+    end
+    for _, Part in next, VirtualRig:GetChildren() do
+        if Part:IsA("BasePart") then
+            Part.Transparency = 1
+        end
+    end
+        local ScreenGui = Instance.new("ScreenGui")
+	local W = Instance.new("TextButton")
+	local S = Instance.new("TextButton")
+
+	--Properties:
+
+	ScreenGui.Parent = game.Players.LocalPlayer.PlayerGui
+	ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	W.Name = "W"
+	W.Parent = ScreenGui
+	W.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	W.Position = UDim2.new(0.161668837, 0, 0.601604283, 0)
+	W.Size = UDim2.new(0, 58, 0, 50)
+	W.Font = Enum.Font.SourceSans
+	W.Text = "LeftArm"
+	W.TextColor3 = Color3.fromRGB(226, 226, 226)
+	W.TextScaled = true
+	W.TextSize = 5.000
+	W.TextWrapped = true
+	W.MouseButton1Down:Connect(function()
+	    if Point1 ~= true then
+		Point1 = true
+        else
+        Point1 = false
+end
+end)
+S.Name = "S"
+	S.Parent = ScreenGui
+	S.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+	S.Position = UDim2.new(0.69, 0, 0.601604283, 0)
+	S.Size = UDim2.new(0, 58, 0, 50)
+	S.Font = Enum.Font.SourceSans
+	S.Text = "RightArm"
+	S.TextColor3 = Color3.fromRGB(226, 226, 226)
+	S.TextScaled = true
+	S.TextSize = 5.000
+	S.TextWrapped = true
+	S.MouseButton1Down:Connect(function()
+	    if Point2 ~= true then
+		Point2 = true
+        else
+        Point2 = false
+end
+end)
+    --
+    Camera.CameraSubject = VirtualBody.Humanoid
+    Character.Humanoid.WalkSpeed = 0
+    Character.Humanoid.JumpPower = 1
+    for _, Part in next, VirtualBody:GetChildren() do
+        if Part:IsA("BasePart") then
             Part.Transparency = 1
         end
     end
