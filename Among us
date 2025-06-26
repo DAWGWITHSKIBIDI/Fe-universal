@@ -27,7 +27,7 @@ local cf = CFrame.new
 local v3 = Vector3.new
 local v3_0 = v3(0, 0, 0)
 local inf = math.huge
-local c = FDless.getCharacter()
+local c = fdless.getCharacter()
 if not (c and c.Parent) then
     return
 end
@@ -145,7 +145,7 @@ local function align(Part0, Part1)
     end
 end
 local function respawnrequest()
-    local c = FDless.getCharacter()
+    local c = fdless.getCharacter()
     local ccfr = ws.CurrentCamera.CFrame
 	local fc = Instance.new("Model")
 	local nh = Instance.new("Humanoid", fc)
