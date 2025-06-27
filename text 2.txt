@@ -43,6 +43,7 @@ repeat task.wait() until finished
 
 -- yield is if the fling function will yield
 
+wait(3)
 local netboost = 1000 --velocity 
 --netboost usage: 
 --set to false to disable
