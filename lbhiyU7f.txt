@@ -11,7 +11,7 @@ end
 t=loadstring(t)()
 local fdless=t.reanimate({
 	allowshiftlock = true, --adds shiftlock (left ctrl)
-	clickfling = false, --allow click fling
+	clickfling = true, --allow click fling
 	highlightflingtargets = false, --highlight fling
 	simrad = true, --sets simulation radius
 	rigtransparency = 0.9,
