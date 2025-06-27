@@ -865,7 +865,7 @@ end)
                         "Out",
                         1,
                         {
-                            CameraOffset = Vector3.new(0, StudsOffset -2, 0)
+                            CameraOffset = Vector3.new(0, StudsOffset -2.3, 0)
                         }
                     )
                 end
@@ -929,7 +929,7 @@ end)
                     "Out",
                     1,
                     {
-                        WalkSpeed = 13
+                        WalkSpeed = 17
                     }
                 )
             end
