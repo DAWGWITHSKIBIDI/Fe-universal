@@ -30,7 +30,7 @@ local charac = fdless.getCharacter()
 
 --|| Settings:
 local StudsOffset = 0 -- Character height (negative if you're too high)
-local Smoothness = .5 -- Character interpolation (0.1 - 1 = smooth - rigid)
+local Smoothness = 1 -- Character interpolation (0.1 - 1 = smooth - rigid)
 local AnchorCharacter = false -- Prevent physics from causing inconsistencies
 local HideCharacter = false -- Hide character on a platform
 local NoCollision = true -- Disable player collision
@@ -43,7 +43,7 @@ local RagdollHeadMovement = true -- Move your head separately from your body (+9
 local AutoRun = false -- Run script on respawn
 local AutoRespawn = true -- Kill your real body when your virtual body dies
 local WearAllAccessories = true -- Use all leftover hats for the head
-local AccurateHandPosition = true -- Move your Roblox hands according to your real hands
+local AccurateHandPosition = false -- Move your Roblox hands according to your real hands
 local AccessorySettings = {
     LeftArm = "",
     RightArm = "",
@@ -929,7 +929,7 @@ end)
                     "Out",
                     1,
                     {
-                        WalkSpeed = 7
+                        WalkSpeed = 10
                     }
                 )
             end
