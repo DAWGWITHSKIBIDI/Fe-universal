@@ -214,8 +214,6 @@ do
 	end))
 end
 
-fdless.freeMovement(true)
-
 local charac = fdless.getCharacter()
 
 --|| Settings:
