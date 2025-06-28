@@ -214,7 +214,7 @@ do
 	end))
 end
 
-local charac = fdless.getCharacter()
+local charac = LocalPlayer.Character
 
 --|| Settings:
 local StudsOffset = -0.4-- Character height (negative if you're too high)
