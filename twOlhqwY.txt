@@ -7,22 +7,53 @@
 
 --RagdollEnabled is set to true, DON'T set it to false or CLOVR won't work. Feel free to change the other settings though. -Abacaxl
 
-local t="https://gist.githubusercontent.com/BloxinStud10/bd5a007ad744aad5e61b7055531ee809/raw/b329ffdea24b068a3e631200d01b945b4b2db3e5/testlol.luau"
-if not pcall(function() local cont=game:HttpGet(t) if cont then t=cont end end) then
-	local result = (request or http_request or http and http.request or syn and syn.request)({Method = "GET",Url = t})
-	if result then
-		t=result.Body
-	end
-end
-t=loadstring(t)()
-local fdless=t.reanimate({
-	allowshiftlock = true, --adds shiftlock (left ctrl)
-	clickfling = false, --allow click fling
-	highlightflingtargets = false, --highlight fling
-	simrad = true, --sets simulation radius
-	rigtransparency = 1,
-	method = 2
-})
+--[[
+	WARNING: Heads up! This script has not been verified by ScriptBlox. Use at your own risk!
+]]
+-- SETTINGS --
+local settings = _G
+
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1 -- 0 to disable
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true --[[ only should be disabled if
+your character havent played ANY animations, otherwise it breaks the reanimate ]]
+settings["Instant respawn"] = false --[[ Instant respawns the
+character, it will still wait the respawn time, but your character wont be dead.
+Requires: replicatesignal function
+Enable if you want the feature
+]]
+settings["Hide HumanoidRootPart"] = false --[[ Enabled by default. when enabled, your chat bubble or name tag
+will not appear above your character, but you will have your character immortal in the Fencing arena.
+]]
+settings["PermaDeath fake character"] = true --[[When enabled, when you die when the reanimate is on, you
+wont respawn. If you want respawn, set it to false
+]]
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+(function() if getgenv then return getgenv() else return _G end end)().fling = nil
+local finished = false
+
+task.spawn(function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV2/refs/heads/main/v2"))()
+end)
+
+repeat task.wait() until finished
+
+-- USAGE: getgenv().fling(character, time, yield) if you dont have getgenv: _G.fling(character, time, yield)
+-- or just fling(character, time, yield)
+
+-- time is for how much time in seconds it will fling
+-- the character
+
+-- yield is if the fling function will yield
 
 fdless.freeMovement(true)
 
