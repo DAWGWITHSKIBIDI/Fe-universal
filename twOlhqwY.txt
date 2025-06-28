@@ -214,7 +214,7 @@ do
 	end))
 end
 
-local charac = LocalPlayer.CharacterAdded
+local character = LocalPlayer.CharacterAdded
 
 --|| Settings:
 local StudsOffset = -0.4-- Character height (negative if you're too high)
