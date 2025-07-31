@@ -1,0 +1,358 @@
+--[[ Pursuer Jason
+Converted by DonesTrasNam (Me) 
+Reanimation by gelatek
+hats Below
+https://www.roblox.com/catalog/14763461745/The-Biggest-Guh-Waist
+https://www.roblox.com/catalog/14500805111/HUGEST-WAIST-ITEM
+https://www.roblox.com/catalog/14500822536/HUGEST-WAIST-ITEM-RED
+https://www.roblox.com/catalog/17345400184/Longest-biggest-blocky-item
+https://www.roblox.com/catalog/121668589285446/REALLY-BIG-TORSO-V2
+
+For head
+Head
+https://www.roblox.com/catalog/4819740796/Robox
+https://www.roblox.com/catalog/7583370812/Nebula-Blade
+]]
+
+
+KryptonConfiguration = {
+	WaitTime = 0.251,
+	FakeRigScale = 3.53,
+	DestroyHeightOffset = 50,
+	TeleportOffsetRadius = 20,
+	RefitHatCount = 6,
+
+	RigName = "Credit To Kade And Me",
+
+	ReturnOnDeath = true,
+
+	Flinging = { -- UNFINISHED
+		Enabled = true,
+		MethodUsed = "Tool", -- Tool, Hat, HatTouch
+		FlingMagnitude = 8000,
+	},
+
+	Reclaim = true,
+	Refit = true,
+	SetCharacter = true,
+	Animations = true,
+
+	NoCollisions = true,
+	AntiVoiding = true,
+	SetSimulationRadius = false,
+	DisableCharacterScripts = true,
+	AccessoryFallbackDefaults = false,
+	OverlayFakeCharacter = false,
+	LimitHatsPerLimb = false,
+	NoBodyNearby = true, 
+	PermanentDeath = true,
+
+	Hats = {
+		["Right Arm"] = {
+			{Texture = "17345250641", Mesh = "17345242336", Name = "Accessory (UPLOAD THIS ONE)", Offset = CFrame.new(0, 0, 0) * CFrame.Angles(math.rad(0), 55, 0, math.rad(90))},
+			{Texture = "4645402630", Mesh = "3030546036", Name = "International Fedora", Offset = CFrame.new(0.25,0,0) * CFrame.Angles(math.rad(-90), 0, math.rad(-90))},
+		},
+
+		["Left Arm"] = {
+			{Texture = "14253035221", Mesh = "14763456956", Name = "NewAccessory", Offset = CFrame.Angles(55, 0, math.rad(90))},
+			{Texture = "3650139425", Mesh = "3030546036", Name = "International Fedora", Offset = CFrame.new(-0.25,0,0) * CFrame.Angles(math.rad(-90), 0, math.rad(90))}
+		},
+
+		["Right Leg"] = {
+			{Texture = "14500658147", Mesh = "14500656581", Name = "WaistHat", Offset = CFrame.Angles(0, 0, math.rad(-90))},
+			{Texture = "4622077774", Mesh = "3030546036", Name = "International Fedora", Offset = CFrame.Angles(math.rad(-90), 0, math.rad(90))},
+			{Texture = "3360978739", Mesh = "3030546036", Name = "InternationalFedora", Offset =  CFrame.Angles(math.rad(-90), 0, math.rad(90))},
+		},
+
+		["Left Leg"] = {
+			{Texture = "14500688203", Mesh = "14500686852", Name = "WaistHatRed", Offset = CFrame.Angles(0, 0, math.rad(-90))},
+			{Texture = "3860099469", Mesh = "3030546036", Name = "InternationalFedora", Offset = CFrame.Angles(math.rad(-90), 0, math.rad(-90))},
+			{Texture = "3409604993", Mesh = "3030546036", Name = "InternationalFedora", Offset = CFrame.Angles(math.rad(-90), 0, math.rad(-90))}
+		},
+
+		["Torso"] = {
+			{Texture = "85260593368362", Mesh = "111946216585470", Name = "Accessory (TorsoAccessory)", Offset = CFrame.new(0, 1, math.rad(0))},
+			{Texture = "4819722776", Mesh = "4819720316", Name = "MeshPartAccessory", Offset = CFrame.Angles(0, 0, math.rad(-15))}
+},
+
+["Head"] = {
+			{Texture = "7535284516", Mesh = "7535284433", Name = "Nebula Blade", Offset = CFrame.new(0, 3.5, 0) * CFrame.Angles(math.rad(0),0 , 6942, math.rad(90))},
+{Texture = "4819722776", Mesh = "4819720316", Name = "MeshPartAccessory", Offset = CFrame.Angles(0, 0, math.rad(-15))}
+		},
+	},
+}
+loadstring(game:HttpGet("https://raw.githubusercontent.com/KadeTheExploiter/Krypton/main/Module.luau"))()
+task.wait(0.5)
+if not getgenv()["Animator"] then
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/xhayper/Animator/main/Source/Main.lua"))()
+	hookAnimatorFunction()
+end
+local Anim
+local id
+local walk = 100206079439305
+local mouse1 = false
+local finish = false
+local i = 94895464960972
+local sprinting1 = false
+local ability = false
+local run = 138660433982140
+local uis = game:GetService("UserInputService")
+local walking = false
+local hwalking = 132377038617766
+local blocking = false
+local blockid = 109667959938617
+local punching = false
+local punchid = 126681776859538
+local atacking = false
+local atackid = 126217710453897
+local charging = false
+local chargeid = 81255669374177
+local hurt = false
+local hidle = 81998763930090
+local hrun = 115946474977409
+local sprinting = false
+local ws = 12
+local taunt = false
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+local mouse = player:GetMouse()
+local idle = true
+local char = game.Players.LocalPlayer.Character
+local hum = char:FindFirstChild("Humanoid")
+local punchvel = Instance.new("VectorForce")
+punchvel.Parent = char.HumanoidRootPart
+punchvel.Attachment0 = char.HumanoidRootPart.RootAttachment
+punchvel.Enabled = false
+punchvel.Force = Vector3.new(0, 0, -15000)
+local chargevel = Instance.new("VectorForce")
+chargevel.Parent = char.HumanoidRootPart
+chargevel.Attachment0 = char.HumanoidRootPart.RootAttachment
+chargevel.Enabled = false
+chargevel.Force = Vector3.new(0, 0, 0)
+hum.Animator:Destroy()
+char.Animate:Destroy()
+Anim = hum:LoadAnimation(i)
+Anim:Play()
+id = i
+hum.WalkSpeed = ws
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.LeftShift then
+	sprinting1 = true
+	ws = 24
+		if charging == false and blocking == false and punching == false then
+		hum.WalkSpeed = 40
+		end
+	end
+	end)
+uis.InputEnded:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.LeftShift then
+	    sprinting1 = false
+		ws = 12
+	    if charging == false and blocking == false and punching == false then
+		hum.WalkSpeed = 12
+		end
+	end
+	end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.One then
+        Anim:Stop()
+        id = "taunt"
+        Anim = hum:LoadAnimation(133160365635320)
+        taunt = true
+        Anim:Play()
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Two then
+        Anim:Stop()
+        id = "taunt"
+        Anim = hum:LoadAnimation(75420633536507)
+        taunt = true
+        Anim:Play()
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Three then
+        Anim:Stop()
+        id = "taunt"
+        Anim = hum:LoadAnimation(75802192289302)
+        taunt = true
+        Anim:Play()
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Four then
+        Anim:Stop()
+        id = "taunt"
+        Anim = hum:LoadAnimation(121768360244671)
+        taunt = true
+        Anim:Play()
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Five then
+        Anim:Stop()
+        id = "taunt"
+        Anim = hum:LoadAnimation(114206095641235)
+        taunt = true
+        Anim:Play()
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Six then
+        Anim:Stop()
+        id = "taunt"
+        Anim = hum:LoadAnimation(111309618966926)
+        taunt = true
+        Anim:Play()
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Seven then
+        Anim:Stop()
+        id = "taunt"
+        Anim = hum:LoadAnimation(134617723143543)
+        taunt = true
+        Anim:Play()
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.E and ability == false then
+		ability = true
+		charging = true
+		hum.WalkSpeed = .1
+		chargevel.Enabled = true
+		local scream = Instance.new("Sound")
+		scream.Parent = char.HumanoidRootPart
+		scream.SoundId = "rbxassetid://0"
+		scream.Playing = true
+		wait(4.5)
+		chargevel.Enabled = false
+		scream:Destroy()
+		charging = false
+		ability = false
+		hum.WalkSpeed = ws
+	end
+end)
+
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.Q and ability == false then
+        blocking = true
+        ability = true
+		hum.WalkSpeed = 5
+		wait(1)
+		ability = false
+		blocking = false
+		hum.WalkSpeed = ws
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.R and ability == false then
+        punching = true
+        ability = true
+		hum.WalkSpeed = 3
+		wait(.3)
+		punchvel.Enabled = true
+		wait(.2)
+		punchvel.Enabled = false
+		wait(.3)
+		hum.WalkSpeed = ws
+		ability = false
+		punching = false
+	end
+end)
+uis.InputBegan:Connect(function(input)
+	if input.KeyCode == Enum.KeyCode.T and ability == false then
+        atacking = true
+        ability = true
+		hum.WalkSpeed = 45
+		wait(5)
+		ability = false
+		atacking = false
+		hum.WalkSpeed = ws
+	end
+end)
+while wait() do
+	if idle == true and taunt == false and hurt == false and ability == false and mouse1 == false and finish == false then
+		if id ~= i then 
+	    Anim:Stop()
+		Anim = hum:LoadAnimation(i)
+		Anim.Looped = true
+		Anim:Play()
+		id = i
+		end
+	end
+	if walking == true and taunt == false and ability == false and hurt == false and sprinting1 == false and finish == false and mouse1 == false then
+		if id ~= walk then
+		Anim:Stop()
+		Anim = hum:LoadAnimation(walk)
+		Anim.Looped = true
+		Anim:Play() 
+		id = walk
+		end
+	end
+	if sprinting == true and taunt == false and ability == false and hurt == false and mouse1 == false then
+		if id ~= run then
+        Anim:Stop()
+		Anim = hum:LoadAnimation(run)
+		Anim.Looped = true
+		Anim:Play() 
+		id = run
+		end
+	end
+	if hum.MoveDirection ~= Vector3.new(0, 0, 0) and sprinting1 == false then
+		walking = true
+		sprinting = false
+		idle = false
+		taunt = false
+	end
+	if hum.MoveDirection ~= Vector3.new(0, 0, 0) and sprinting1 == true and mouse1 == false then
+		walking = false
+		sprinting = true
+		idle = false
+		taunt = false
+	end
+	if hum.MoveDirection == Vector3.new(0,0,0) then
+		idle = true
+		walking = false
+		sprinting = false
+	end
+	if taunt == false and mouse1 == false and punching == true and blocking == false and charging == false  then
+		if id ~= punchid then 
+	    Anim:Stop()
+		Anim = hum:LoadAnimation(punchid)
+		Anim.Looped = false
+		Anim:Play()
+		id = punchid
+		end
+	end
+	if taunt == false and mouse1 == false and charging == true and blocking == false and punching == false  then
+		if id ~= chargeid then
+		Anim:Stop()
+		Anim = hum:LoadAnimation(chargeid)
+		Anim.Looped = true
+		Anim:Play() 
+		id = chargeid
+		end
+	end
+	if blocking == true and taunt == false and charging == false and punching == false then
+		if id ~= blockid then 
+	    Anim:Stop()
+		Anim = hum:LoadAnimation(blockid)
+		Anim.Looped = false
+		Anim:Play()
+		id = blockid
+		end
+	end
+	if atacking == true and taunt == false and charging == false and punching == false and blocking == false then
+		if id ~= atackid then 
+	    Anim:Stop()
+		Anim = hum:LoadAnimation(atackid)
+		Anim.Looped = false
+		Anim:Play()
+		id = atackid
+		end
+	end
+
+
+ end
