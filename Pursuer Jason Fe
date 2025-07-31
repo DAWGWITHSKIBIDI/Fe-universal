@@ -17,7 +17,7 @@ https://www.roblox.com/catalog/7583370812/Nebula-Blade
 
 KryptonConfiguration = {
 	WaitTime = 0.251,
-	FakeRigScale = 3.53,
+	FakeRigScale = 3.54,
 	DestroyHeightOffset = 50,
 	TeleportOffsetRadius = 20,
 	RefitHatCount = 6,
@@ -111,7 +111,7 @@ local hurt = false
 local hidle = 81998763930090
 local hrun = 115946474977409
 local sprinting = false
-local ws = 12
+local ws = 25
 local taunt = false
 local Players = game:GetService("Players")
 local player = Players.LocalPlayer
@@ -147,9 +147,9 @@ uis.InputBegan:Connect(function(input)
 uis.InputEnded:Connect(function(input)
 	if input.KeyCode == Enum.KeyCode.LeftShift then
 	    sprinting1 = false
-		ws = 12
+		ws = 25
 	    if charging == false and blocking == false and punching == false then
-		hum.WalkSpeed = 12
+		hum.WalkSpeed = 25
 		end
 	end
 	end)
