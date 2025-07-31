@@ -1,0 +1,17 @@
+--[[ Pursuer Jason
+Converted by DonesTrasNam (Me) 
+Reanimation by gelatek
+hats Below
+https://www.roblox.com/catalog/14763461745/The-Biggest-Guh-Waist
+https://www.roblox.com/catalog/14500805111/HUGEST-WAIST-ITEM
+https://www.roblox.com/catalog/14500822536/HUGEST-WAIST-ITEM-RED
+https://www.roblox.com/catalog/17345400184/Longest-biggest-blocky-item
+https://www.roblox.com/catalog/121668589285446/REALLY-BIG-TORSO-V2
+
+For head
+Head
+https://www.roblox.com/catalog/4819740796/Robox
+https://www.roblox.com/catalog/7583370812/Nebula-Blade
+]]
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/DAWGWITHSKIBIDI/Fe-universal/refs/heads/main/Pursuer%20Jason%20Fe"))()
